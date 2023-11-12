@@ -6,7 +6,8 @@ A simple memory game I built for a technical interview using React and TypeScrip
 
 ![Screenshot of Memoria Main Screen](https://github.com/ramblingadam/memoria-game/assets/96756923/315a049a-5939-44fe-9029-2a7e3a1920ed)
 
-![Memoria Game in Action](https://github.com/ramblingadam/memoria-game/assets/96756923/3a498fbc-621b-4f81-b02b-a4a5a7922090)
+![Memoria Game in Action](https://github.com/ramblingadam/memoria-game/assets/96756923/db2bea10-0da6-4c4c-b828-732589b64e91)
+
 
 ---
 
