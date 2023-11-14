@@ -23,7 +23,7 @@
   ]
 }
 */
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './HighScores.css'
 
 import Timer from './Timer'
@@ -65,6 +65,7 @@ const HighScores = ({
   )
 
   const [nameEntry, setNameEntry] = useState('')
+  const highScoreInputRef = useRef<HTMLInputElement | null>(null)
 
   // Put default scores in localStorage if not present.
   useEffect(() => {
@@ -92,10 +93,10 @@ const HighScores = ({
 
   useEffect(() => {
     if (!newHighScore) return
-    const highScoreInput = document.querySelector(
-      '#high-score-input'
-    ) as HTMLInputElement
-    highScoreInput.focus()
+    const highScoreInput = highScoreInputRef.current
+    if (highScoreInput !== null) {
+      highScoreInput.focus()
+    }
   }, [newHighScore])
 
   const handleNameEntryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -230,6 +231,7 @@ const HighScores = ({
               maxLength={7}
               value={nameEntry}
               onChange={handleNameEntryChange}
+              ref={highScoreInputRef}
             ></input>
             <button>Submit</button>
           </label>
